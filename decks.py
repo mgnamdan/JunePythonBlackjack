@@ -21,6 +21,7 @@ class Deck:
                 for rank in self.RANKS:
                     newCard = Card(rank, suit)
                     self.drawPile.append(newCard)
+        self.shuffle()
 
 
     def draw(self):

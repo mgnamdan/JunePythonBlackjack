@@ -1,7 +1,8 @@
 # ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
 # HELPER FUNCTIONS AND IMPORTS
 # ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
-from decks import Deck
+
+from cards import Card
 
 
 
@@ -10,16 +11,33 @@ from decks import Deck
 # ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
 def main():
     testDeck = Deck()
-    drawnCard = testDeck.draw()
+    testPlayer = CompBJPlayer()
+    testPlayer2 = HumanBJPlayer()
 
-    print(f"The drawn card was a {drawnCard}")
+    card1 = Card("Jack", "Hearts")
+    card2 = Card("Eight", "Spades")
+    card3 = Card("Seven", "Clubs")
+    card4 = Card()
+    card5 = Card()
+    card6 = Card()
 
-    testDeck.shuffle()
+    testPlayer2.drawCard(card1)
+    testPlayer2.drawCard(card2)
 
-    print("After shuffle:")
-    print(testDeck.drawPile)
-    drawnCard = testDeck.draw()
-    print(f"The drawn card was a {drawnCard}")
+    print(f"choice = {testPlayer2.makeChoice()}")
+
+    testPlayer2.drawCard(card3)
+
+    print(f"choice = {testPlayer2.makeChoice()}")
+
+    testPlayer2.discardCard(0)
+
+    testPlayer2.drawCard(card4)
+    testPlayer2.drawCard(card5)
+    testPlayer2.drawCard(card6)
+
+    print(f"choice = {testPlayer2.makeChoice()}")
+
 
 # ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
 # MAIN FUNCTION CALL
